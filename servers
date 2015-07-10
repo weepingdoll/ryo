@@ -1,0 +1,7 @@
+[servers]
+www
+ansible
+samba
+fluentd
+bind
+postfix

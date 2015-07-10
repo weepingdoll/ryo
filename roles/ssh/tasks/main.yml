@@ -1,0 +1,76 @@
+- name: add id_key.pub to root
+  lineinfile: dest=/root/.ssh/authorized_keys
+              regexp="{{ item.regexp }}"
+              line="{{ item.line }}"
+  with_items:
+   - { regexp: 'ansible@ansible', line: '{{ ansible_ansible }}' }
+   - { regexp: 'root@apache', line: '{{ root_apache }}' }
+   - { regexp: 'root@postfix', line: '{{ root_postfix }}' }
+   - { regexp: 'root@samba', line: '{{ root_samba }}' }
+   - { regexp: 'root@ansible', line: '{{ root_ansible }}' }
+   - { regexp: 'root@fluentd', line: '{{ root_fluentd }}' }
+   - { regexp: 'root@bind', line: '{{ root_bind }}' }
+   - { regexp: 'ryo@www.rite.jp', line: '{{ ryo }}' }
+   - { regexp: 'ansible@www.rite.jp', line: '{{ ansible_apache }}' }
+   - { regexp: 'ansible@samba', line: '{{ ansible_samba }}' }
+   - { regexp: 'ansible@bind', line: '{{ ansible_bind }}' }
+   - { regexp: 'ansible@fluentd', line: '{{ ansible_fluentd }}' }
+   - { regexp: 'ansible@postfix', line: '{{ ansible_postfix }}' }
+   - { regexp: 'ryo@ansible', line: '{{ ryo_ansible }}' }
+   - { regexp: 'ryo@samba', line: '{{ ryo_samba }}' }
+   - { regexp: 'ryo@bind', line: '{{ ryo_bind }}' }
+   - { regexp: 'ryo@fluentd', line: '{{ ryo_fluentd }}' }
+   - { regexp: 'ryo@postfix', line: '{{ ryo_postfix }}' }
+#   - { regexp: '', line: '' }
+
+- name: add id_key.pub to ryo
+  lineinfile: dest=/home/ryo/.ssh/authorized_keys
+              regexp="{{ item.regexp }}"
+              line="{{ item.line }}"
+  with_items:
+   - { regexp: 'ansible@ansible', line: '{{ ansible_ansible }}' }
+   - { regexp: 'root@apache', line: '{{ root_apache }}' }
+   - { regexp: 'root@postfix', line: '{{ root_postfix }}' }
+   - { regexp: 'root@samba', line: '{{ root_samba }}' }
+   - { regexp: 'root@ansible', line: '{{ root_ansible }}' }
+   - { regexp: 'root@fluentd', line: '{{ root_fluentd }}' }
+   - { regexp: 'root@bind', line: '{{ root_bind }}' }
+   - { regexp: 'ryo@www.rite.jp', line: '{{ ryo }}' }
+   - { regexp: 'ansible@www.rite.jp', line: '{{ ansible_apache }}' }
+   - { regexp: 'ansible@samba', line: '{{ ansible_samba }}' }
+   - { regexp: 'ansible@bind', line: '{{ ansible_bind }}' }
+   - { regexp: 'ansible@fluentd', line: '{{ ansible_fluentd }}' }
+   - { regexp: 'ansible@postfix', line: '{{ ansible_postfix }}' }
+   - { regexp: 'ryo@ansible', line: '{{ ryo_ansible }}' }
+   - { regexp: 'ryo@samba', line: '{{ ryo_samba }}' }
+   - { regexp: 'ryo@bind', line: '{{ ryo_bind }}' }
+   - { regexp: 'ryo@fluentd', line: '{{ ryo_fluentd }}' }
+   - { regexp: 'ryo@postfix', line: '{{ ryo_postfix }}' }
+#   - { regexp: '', line: '' }
+
+- name: add id_key.pub to ansible
+  lineinfile: dest=/home/ansible/.ssh/authorized_keys
+              regexp="{{ item.regexp }}"
+              line="{{ item.line }}"
+  with_items:
+   - { regexp: 'ansible@ansible', line: '{{ ansible_ansible }}' }
+   - { regexp: 'root@apache', line: '{{ root_apache }}' }
+   - { regexp: 'root@postfix', line: '{{ root_postfix }}' }
+   - { regexp: 'root@samba', line: '{{ root_samba }}' }
+   - { regexp: 'root@ansible', line: '{{ root_ansible }}' }
+   - { regexp: 'root@fluentd', line: '{{ root_fluentd }}' }
+   - { regexp: 'root@bind', line: '{{ root_bind }}' }
+   - { regexp: 'ryo@www.rite.jp', line: '{{ ryo }}' }
+   - { regexp: 'ansible@www.rite.jp', line: '{{ ansible_apache }}' }
+   - { regexp: 'ansible@samba', line: '{{ ansible_samba }}' }
+   - { regexp: 'ansible@bind', line: '{{ ansible_bind }}' }
+   - { regexp: 'ansible@fluentd', line: '{{ ansible_fluentd }}' }
+   - { regexp: 'ansible@postfix', line: '{{ ansible_postfix }}' }
+   - { regexp: 'ryo@ansible', line: '{{ ryo_ansible }}' }
+   - { regexp: 'ryo@samba', line: '{{ ryo_samba }}' }
+   - { regexp: 'ryo@bind', line: '{{ ryo_bind }}' }
+   - { regexp: 'ryo@fluentd', line: '{{ ryo_fluentd }}' }
+   - { regexp: 'ryo@postfix', line: '{{ ryo_postfix }}' }
+#   - { regexp: '', line: '' }
+
+- include: users.yml tags=users,ssh

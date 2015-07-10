@@ -1,0 +1,21 @@
+#- hosts: all
+#  sudo: yes
+#  tasks:
+  - name: be sure group is created
+    group: >
+      name={{ item.key }}
+      state=present
+    with_dict: "{{ users }}"
+ 
+  - name: be sure user is created
+    user: >
+      name={{ item.key }}
+      group={{ item.key }}
+      state=present
+    with_dict: "{{ users }}"
+ 
+  - name: be sure correct authorized_keys are registered
+    authorized_key: >
+      user={{ item.key }}
+      key="{{ item.value.authorized_key }}"
+    with_dict: "{{ users }}"

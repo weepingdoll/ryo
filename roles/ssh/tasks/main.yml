@@ -22,6 +22,7 @@
    - { regexp: 'ryo@fluentd', line: '{{ ryo_fluentd }}' }
    - { regexp: 'ryo@postfix', line: '{{ ryo_postfix }}' }
 #   - { regexp: '', line: '' }
+#   - { regexp: '', line: '' }
 
 - name: add id_key.pub to ryo
   lineinfile: dest=/home/ryo/.ssh/authorized_keys

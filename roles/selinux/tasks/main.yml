@@ -1,0 +1,9 @@
+- name: SElinux disabled
+  lineinfile: dest=/etc/sysconfig/selinux
+              regexp="{{ item.regexp }}"
+              line="{{ item.line }}"
+  with_items:
+   - { regexp: 'SELINUX=', line: 'SELINUX=disabled' }
+
+- name: getenforce 0
+  command: getenforce 0

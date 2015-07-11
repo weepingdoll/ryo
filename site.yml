@@ -3,3 +3,4 @@
   roles:
     - { role: hosts, tags: hosts }
     - { role: ssh, tags: ssh }
+    - { role: selinux, tags: selinux }

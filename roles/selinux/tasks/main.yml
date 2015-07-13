@@ -5,5 +5,5 @@
   with_items:
    - { regexp: 'SELINUX=', line: 'SELINUX=disabled' }
 
-- name: getenforce 0
-  command: getenforce 0
+- name: change SELINUX disable
+  selinux: state=disabled

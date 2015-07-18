@@ -6,3 +6,13 @@ fluentd
 bind
 postfix
 desktop
+
+[servers:children]
+send-servers
+
+[send-servers]
+ansible
+samba
+fluentd
+bind
+desktop

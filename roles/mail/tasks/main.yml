@@ -1,0 +1,26 @@
+- name: be sure mail-server is installed
+  yum: name={{ item }} state=installed
+  with_items:
+    - postfix
+    - cyrus-sasl
+
+- name: be sure sasl is running and enabled
+  service: name=saslauthd state=running enabled=yes
+
+- name: put /etc/sasl2/smtpd.conf
+  copy: src=smtpd.conf.j2 dest=/etc/sasl2/smtpd.conf
+
+- name: put /etc/postfix/main.cf
+  template: src=main.cf.j2 dest=/etc/postfix/main.cf
+
+- name: put /etc/postfix/sasl_passwd
+  template: src=sasl_passwd.j2 dest=/etc/postfix/sasl_passwd owner=root group=root mode=0640
+
+- name: postmap /etc/postfix/sasl_passwd
+  command: "postmap /etc/postfix/sasl_passwd"
+
+- name: create /etc/skel/Maildir/{new,cur,tmp} directory
+  file: path=/etc/skel/Maildir/{new,cur,tmp} state=directory owner=root group=root mode=0700
+
+- name: be sure postfix is running and enabled
+  service: name=postfix state=running enabled=yes

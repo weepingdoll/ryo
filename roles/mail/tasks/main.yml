@@ -3,6 +3,7 @@
   with_items:
     - postfix
     - cyrus-sasl
+    - cyrus-sasl-plain
 
 - name: be sure sasl is running and enabled
   service: name=saslauthd state=running enabled=yes

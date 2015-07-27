@@ -21,7 +21,9 @@
    - { regexp: 'ryo@bind', line: '{{ ryo_bind }}' }
    - { regexp: 'ryo@fluentd', line: '{{ ryo_fluentd }}' }
    - { regexp: 'ryo@postfix', line: '{{ ryo_postfix }}' }
-#   - { regexp: '', line: '' }
+   - { regexp: 'ryo@nagios', line: '{{ ryo_nagios }}' }
+   - { regexp: 'root@nagios', line: '{{ root_nagios }}' }
+   - { regexp: 'ansible@nagios', line: '{{ ansible_nagios }}' }
 #   - { regexp: '', line: '' }
 
 - name: add id_key.pub to ryo
@@ -47,6 +49,9 @@
    - { regexp: 'ryo@bind', line: '{{ ryo_bind }}' }
    - { regexp: 'ryo@fluentd', line: '{{ ryo_fluentd }}' }
    - { regexp: 'ryo@postfix', line: '{{ ryo_postfix }}' }
+   - { regexp: 'ryo@nagios', line: '{{ ryo_nagios }}' }
+   - { regexp: 'root@nagios', line: '{{ root_nagios }}' }
+   - { regexp: 'ansible@nagios', line: '{{ ansible_nagios }}' }
 #   - { regexp: '', line: '' }
 
 - name: add id_key.pub to ansible
@@ -72,6 +77,9 @@
    - { regexp: 'ryo@bind', line: '{{ ryo_bind }}' }
    - { regexp: 'ryo@fluentd', line: '{{ ryo_fluentd }}' }
    - { regexp: 'ryo@postfix', line: '{{ ryo_postfix }}' }
+   - { regexp: 'ryo@nagios', line: '{{ ryo_nagios }}' }
+   - { regexp: 'root@nagios', line: '{{ root_nagios }}' }
+   - { regexp: 'ansible@nagios', line: '{{ ansible_nagios }}' }
 #   - { regexp: '', line: '' }
 
 - include: users.yml tags=users,ssh

@@ -5,7 +5,7 @@ samba
 fluentd
 bind
 postfix
-desktop
+nagios
 
 [servers:children]
 send-servers
@@ -15,4 +15,4 @@ ansible
 samba
 fluentd
 bind
-desktop
+nagios

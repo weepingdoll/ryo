@@ -4,9 +4,13 @@
     - { role: hosts, tags: hosts }
     - { role: ssh, tags: ssh }
     - { role: selinux, tags: selinux }
-    - { role: nfs_client, tags: nfs_client }
 
 - hosts: send-servers
   sudo: yes
   roles:
     - { role: mail, tags: mail }
+
+- hosts: nfs-servers
+  sudo: yes
+  roles:
+    - { role: nfs_client, tags: nfs_client }

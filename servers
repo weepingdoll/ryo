@@ -9,6 +9,7 @@ nagios
 
 [servers:children]
 send-servers
+nfs-servers
 
 [send-servers]
 ansible
@@ -16,3 +17,11 @@ samba
 fluentd
 bind
 nagios
+
+[nfs-servers]
+www
+ansible
+fluentd
+bind
+nagios
+postfix

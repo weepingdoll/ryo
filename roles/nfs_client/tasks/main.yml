@@ -1,0 +1,11 @@
+- name: be sure basic package is installed
+  yum: name="{{ item }}" state=present
+  with_items:
+   - nfs-utils
+
+- name: nfs mount
+  lineinfile: dest=/etc/fstab
+              regexp="{{ item.regexp }}"
+              line="{{ item.line }}"
+  with_items:
+   - { regexp: '192.168.0.5', line: '192.168.0.5:/NFS /NFS nfs defaults 0 0' }

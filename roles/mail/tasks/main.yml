@@ -16,9 +16,11 @@
 
 - name: put /etc/postfix/sasl_passwd
   template: src=sasl_passwd.j2 dest=/etc/postfix/sasl_passwd owner=root group=root mode=0640
+  register: postfix_changed
 
 - name: postmap /etc/postfix/sasl_passwd
   command: "postmap /etc/postfix/sasl_passwd"
+  when: postfix_changed|changed
 
 - name: create /etc/skel/Maildir/{new,cur,tmp} directory
   file: path=/etc/skel/Maildir/{new,cur,tmp} state=directory owner=root group=root mode=0700

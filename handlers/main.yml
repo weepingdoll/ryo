@@ -1,0 +1,6 @@
+---
+- name: restart_nrpe
+  service: name=nrpe state=reloaded
+
+- name: reload_firewalld
+  service: name=firewalld.service state=restarted

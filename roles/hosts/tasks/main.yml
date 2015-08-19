@@ -1,5 +1,5 @@
 - name: configure hosts
-  copy: src=hosts dest=/etc/hosts owner=root group=root mode=0644
+  template: src=hosts dest=/etc/hosts owner=root group=root mode=0644
 
 #- name: change /etc/hosts
 #  replace: dest=/etc/hosts

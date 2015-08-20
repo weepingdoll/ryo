@@ -3,6 +3,7 @@
   roles:
     - { role: hosts, tags: hosts }
     - { role: ssh, tags: ssh }
+    - { role: bash, tags: bash }
     - { role: selinux, tags: selinux }
     - { role: nagios_client, tags: nagios_client }
   handlers:

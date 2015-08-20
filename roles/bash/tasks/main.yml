@@ -1,0 +1,13 @@
+- name: be sure mail-server is installed
+  yum: name="{{ item }}" state=installed
+  with_items:
+    - bash-completion
+
+#- name: add id_key.pub to root
+#  lineinfile: dest=/root/.bashrc
+#              regexp="{{ item.regexp }}"
+#              line="{{ item.line }}"
+#  with_items:
+#   - { regexp: '    if [ -f /etc/bash_completion ]; then', line: '    if [ -f /etc/bash_completion ]; then' }
+#   - { regexp: '        . /etc/bash_completion', line: '        . /etc/bash_completion' }
+#   - { regexp: 'fi #', line: 'fi #' }

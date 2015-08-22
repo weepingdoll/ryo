@@ -1,27 +1,27 @@
 [servers]
-www
-ansible
-samba
-fluentd
-bind
-postfix
-nagios
+www.rite.jp
+ansible.rite.jp
+nfs.rite.jp
+log.rite.jp
+dns.rite.jp
+mail.rite.jp
+nagios.rite.jp
 
 [servers:children]
 send-servers
-nfs-servers
+nfs-client-servers
 
 [send-servers]
-ansible
-samba
-fluentd
-bind
-nagios
+ansible.rite.jp
+nfs.rite.jp
+log.rite.jp
+dns.rite.jp
+nagios.rite.jp
 
-[nfs-servers]
-www
-ansible
-fluentd
-bind
-nagios
-postfix
+[nfs-client-servers]
+www.rite.jp
+ansible.rite.jp
+nfs.rite.jp
+dns.rite.jp
+mail.rite.jp
+nagios.rite.jp

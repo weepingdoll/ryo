@@ -10,6 +10,7 @@ nagios.rite.jp
 [servers:children]
 send-servers
 nfs-client-servers
+test-servers
 
 [send-servers]
 ansible.rite.jp
@@ -25,3 +26,6 @@ nfs.rite.jp
 dns.rite.jp
 mail.rite.jp
 nagios.rite.jp
+
+[test-servers]
+log.rite.jp

@@ -1,0 +1,14 @@
+- name: configure journald
+  lineinfile: dest=/etc/systemd/journald.conf
+              regexp="RateLimitBurst"
+              line="RateLimitBurst=0"
+  notify:
+   - restart_journald
+   - journald_is_running
+
+- name: configure rsyslog
+  lineinfile: dest=/etc/rsyslog.conf
+              regexp="\$imjournalRatelimitInterval"
+              line="$imjournalRatelimitInterval 0"
+  notify:
+   - restart_rsyslog

@@ -18,3 +18,8 @@
   sudo: yes
   roles:
     - { role: nfs_client, tags: nfs_client }
+
+- hosts: test-servers
+  sudo: yes
+  roles:
+    - { role: journald, tags: journald }

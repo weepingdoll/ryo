@@ -24,6 +24,9 @@
    - { regexp: 'ryo@nagios', line: '{{ ryo_nagios }}' }
    - { regexp: 'root@nagios', line: '{{ root_nagios }}' }
    - { regexp: 'ansible@nagios', line: '{{ ansible_nagios }}' }
+   - { regexp: 'ansible@db', line: '{{ ansible_db }}' }
+   - { regexp: 'root@db', line: '{{ root_db }}' }
+   - { regexp: 'ryo@db', line: '{{ ryo_db }}' }
 #   - { regexp: '', line: '' }
 
 - name: add id_key.pub to ryo
@@ -52,6 +55,9 @@
    - { regexp: 'ryo@nagios', line: '{{ ryo_nagios }}' }
    - { regexp: 'root@nagios', line: '{{ root_nagios }}' }
    - { regexp: 'ansible@nagios', line: '{{ ansible_nagios }}' }
+   - { regexp: 'ansible@db', line: '{{ ansible_db }}' }
+   - { regexp: 'root@db', line: '{{ root_db }}' }
+   - { regexp: 'ryo@db', line: '{{ ryo_db }}' }
 #   - { regexp: '', line: '' }
 
 - name: add id_key.pub to ansible
@@ -80,6 +86,9 @@
    - { regexp: 'ryo@nagios', line: '{{ ryo_nagios }}' }
    - { regexp: 'root@nagios', line: '{{ root_nagios }}' }
    - { regexp: 'ansible@nagios', line: '{{ ansible_nagios }}' }
+   - { regexp: 'ansible@db', line: '{{ ansible_db }}' }
+   - { regexp: 'root@db', line: '{{ root_db }}' }
+   - { regexp: 'ryo@db', line: '{{ ryo_db }}' }
 #   - { regexp: '', line: '' }
 
 - include: users.yml tags=users,ssh

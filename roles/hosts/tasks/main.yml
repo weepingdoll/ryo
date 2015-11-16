@@ -1,6 +1,15 @@
 - name: configure hosts
   template: src=hosts.j2 dest=/etc/hosts owner=root group=root mode=0644
 
+- name: put ryo_config /home/ryo/.ssh/
+  template: src=config.j2 dest=/home/ryo/.ssh/config mode=0600 owner=ryo group=ryo
+
+- name: put root_config /root/.ssh/
+  template: src=config.j2 dest=/root/.ssh/config mode=0600 owner=root group=root
+
+- name: put ansible_config /home/ansible/.ssh/
+  template: src=ansible_config.j2 dest=/home/ansible/.ssh/config mode=0600 owner=ansible group=ansible
+
 #- name: change /etc/hosts
 #  replace: dest=/etc/hosts
 #              regexp="{{ item.regexp }}"

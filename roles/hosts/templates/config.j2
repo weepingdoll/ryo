@@ -1,0 +1,18 @@
+{% if environ is defined %}
+Host *
+   ForwardAgent yes
+   ServerAliveInterval 30
+#  StrictHostKeyChecking no
+#  UserKnownHostsFile /dev/null
+
+Host dameblo.jp
+    HostName        52.69.20.2
+    IdentityFile    ~/.ssh/id_rsa.ec2
+    User            ec2-user
+{% else %}
+Host *
+   ForwardAgent yes
+   ServerAliveInterval 30
+   StrictHostKeyChecking no
+   UserKnownHostsFile /dev/null
+{% endif %}

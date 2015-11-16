@@ -1,0 +1,32 @@
+Host *
+  ControlMaster auto
+  ControlPath ~/.ssh/mux-%r@%h:%p
+  ControlPersist 10m
+  ForwardAgent yes
+  ServerAliveInterval 30
+  StrictHostKeyChecking no
+  UserKnownHostsFile /dev/null
+
+Host www.rite.jp
+  HostName 192.168.0.3
+
+Host ansible.rite.jp
+  HostName 192.168.0.4
+
+Host nfs.rite.jp
+  HostName 192.168.0.5
+
+Host log.rite.jp
+  HostName 192.168.0.6
+
+Host dns.rite.jp
+  HostName 192.168.0.7
+
+Host mail.rite.jp
+  HostName 192.168.0.8
+
+Host nagios.rite.jp
+  HostName 192.168.0.9
+
+Host db.rite.jp
+  HostName 192.168.0.10

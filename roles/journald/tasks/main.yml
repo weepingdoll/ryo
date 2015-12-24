@@ -12,3 +12,10 @@
               line="$imjournalRatelimitInterval 0"
   notify:
    - restart_rsyslog
+
+#- name: change /etc/postfix/transport
+#  lineinfile: dest=/etc/postfix/transport
+#              regexp="{{ item.regexp }}"
+#              line="{{ item.line }}"
+#  with_items:
+#    - { regexp: 'rite.jp', line: 'rite.jp :\gmail.com :\n* discard:discard' }

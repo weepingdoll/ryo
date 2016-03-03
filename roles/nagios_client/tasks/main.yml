@@ -26,3 +26,12 @@
   firewalld: port=5666/tcp state=enabled immediate=yes permanent=true
   notify: reload_firewalld
   when: firewalld_result.stdout == "active"
+
+#- name: change /etc/nagios/nrpe.cfg
+#  lineinfile: dest=/etc/nagios/nrpe.cfg
+#              regexp="{{ item.regexp }}"
+#              line="{{ item.line }}"
+#  with_items:
+#    - { regexp: '^command[check_smtp]', line: 'command[check_smtp]=/usr/lib64/nagios/plugins/check_smtp -w $ARG1$ -c $ARG2$' }
+#    - { regexp: '^command[check_mem]', line: 'command[check_mem]=/usr/lib64/nagios/plugins/check_mem -w $ARG1$ -c $ARG2$' }
+#    - { regexp: '^command[check_swap]', line: 'command[check_swap]=/usr/lib64/nagios/plugins/check_swap -w $ARG1$ -c $ARG2$' }

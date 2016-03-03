@@ -1,4 +1,4 @@
-#############################################################################
+############################################################################
 # Sample NRPE Config File
 # Written by: Ethan Galstad (nagios@nagios.org)
 #
@@ -222,11 +222,13 @@ connection_timeout=300
 # config file is set to '1'.  This poses a potential security risk, so
 # make sure you read the SECURITY file before doing this.
 
+command[check_smtp]=/usr/lib64/nagios/plugins/check_smtp -w $ARG1$ -c $ARG2$
+command[check_mem]=/usr/lib64/nagios/plugins/check_mem -w $ARG1$ -c $ARG2$
+command[check_swap]=/usr/lib64/nagios/plugins/check_swap -w $ARG1$ -c $ARG2$
 command[check_users]=/usr/lib64/nagios/plugins/check_users -w $ARG1$ -c $ARG2$
 command[check_load]=/usr/lib64/nagios/plugins/check_load -w $ARG1$ -c $ARG2$
-command[check_disk]=/usr/lib64/nagios/plugins/check_disk -w $ARG1$ -c $ARG2$ -p $ARG3$
+command[check_disk]=/usr/lib64/nagios/plugins/check_disk -w $ARG1$ -c $ARG2$ -r $ARG3$
 command[check_procs]=/usr/lib64/nagios/plugins/check_procs -w $ARG1$ -c $ARG2$ -s $ARG3$
-
 
 
 # INCLUDE CONFIG DIRECTORY

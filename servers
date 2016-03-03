@@ -3,10 +3,8 @@ www.rite.jp
 ansible.rite.jp
 nfs.rite.jp
 log.rite.jp
-dns.rite.jp
 mail.rite.jp
 nagios.rite.jp
-db.rite.jp
 
 [servers:children]
 send-servers
@@ -17,23 +15,17 @@ test-servers
 ansible.rite.jp
 nfs.rite.jp
 log.rite.jp
-dns.rite.jp
 nagios.rite.jp
-db.rite.jp
 
 [nfs-servers]
 www.rite.jp
 ansible.rite.jp
-dns.rite.jp
 mail.rite.jp
 nagios.rite.jp
-db.rite.jp
 
 [test-servers]
 ansible.rite.jp
 nfs.rite.jp
 log.rite.jp
-dns.rite.jp
 mail.rite.jp
 nagios.rite.jp
-db.rite.jp

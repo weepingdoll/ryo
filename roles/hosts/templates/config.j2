@@ -5,8 +5,8 @@ Host *
 #  StrictHostKeyChecking no
 #  UserKnownHostsFile /dev/null
 
-Host dameblo.jp
-    HostName        52.69.20.2
+Host {{ aws }}
+    HostName        {{ elacticip }}
     IdentityFile    ~/.ssh/id_rsa.ec2
     User            ec2-user
 {% else %}

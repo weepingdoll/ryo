@@ -4,7 +4,7 @@
     - { role: ssh, tags: ssh }
     - { role: bash, tags: bash }
     - { role: selinux, tags: selinux }
-    - { role: nagios_client, tags: nagios_client }
+#    - { role: nagios_client, tags: nagios_client }
     - { role: hosts, tags: hosts }
   handlers:
     - include: handlers/main.yml

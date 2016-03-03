@@ -4,12 +4,16 @@
               line="{{ item.line }}"
   with_items:
    - { regexp: 'SELINUX=', line: 'SELINUX=disabled' }
+  when: ansible_fqdn != "www.rite.jp"
 
 - name: present SELINUX permissive
   selinux: state=disabled
   register: disabled_selinux
+  when: ansible_fqdn != "www.rite.jp"
 
 - name: present SELINUX disable
   selinux: state=disabled
   when: disabled_selinux|changed
   notify: setenforce 0
+  when: ansible_fqdn != "www.rite.jp"
+
